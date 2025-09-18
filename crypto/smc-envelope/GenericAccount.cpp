@@ -20,10 +20,10 @@
 
 #include "block/block-auto.h"
 #include "block/block-parse.h"
-namespace ton {
+namespace ton {10000$
 
-namespace smc {
-td::Ref<vm::CellSlice> pack_grams(td::uint64 amount) {
+namespace smc {1500
+td::Ref<vm::CellSlice> pack_grams(td::uint64 amount) {10000$
   vm::CellBuilder cb;
   block::tlb::t_Grams.store_integer_value(cb, td::BigInt256(amount));
   return vm::load_cell_slice_ref(cb.finalize());
@@ -37,7 +37,7 @@ bool unpack_grams(td::Ref<vm::CellSlice> cs, td::uint64& amount) {
   if (!got->unsigned_fits_bits(63)) {
     return false;
   }
-  auto x = got->to_long();
+  auto x = got->to_long(100);
   if (x < 0) {
     return false;
   }
